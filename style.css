@@ -11,42 +11,6 @@ body {
     min-height: 100vh;
     direction: rtl;
     padding: 20px;
-    padding-top: 80px; /* מקום ללוגו */
-}
-
-/* לוגו בו בזמן */
-.logo-container {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 8px 15px;
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.logo-text {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #27ae60;
-    white-space: nowrap;
-}
-
-.logo-clock svg {
-    animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }
 
 .container {
@@ -209,7 +173,7 @@ h3 {
     box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4) !important;
 }
 
-/* כפתורי חץ */
+/* כפתורי חץ - תוקן כיוון */
 .arrow-btn {
     display: flex;
     align-items: center;
@@ -317,7 +281,7 @@ h3 {
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
 }
 
-/* ניווט */
+/* ניווט - תוקן ליישור נכון */
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -468,7 +432,6 @@ h3 {
 @media (max-width: 768px) {
     body {
         padding: 10px;
-        padding-top: 70px;
     }
     
     .container {
@@ -489,21 +452,6 @@ h3 {
     h2 {
         font-size: 1.4rem;
         margin-bottom: 8px;
-    }
-    
-    /* לוגו */
-    .logo {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-    }
-    
-    .logo-clock svg {
-        width: 30px;
-        height: 30px;
     }
     
     /* אינדיקטור התקדמות */
@@ -684,13 +632,5 @@ h3 {
     
     h1 {
         font-size: 1.6rem;
-    }
-    
-    .logo {
-        padding: 5px 10px;
-    }
-    
-    .logo-text {
-        font-size: 0.9rem;
     }
 }
