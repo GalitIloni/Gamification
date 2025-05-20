@@ -12,10 +12,11 @@
         <div id="intro-screen" class="screen active">
             <h1>אבחון סגנונות למידה VAK</h1>
             <p>ברוכים הבאים לאבחון סגנונות למידה VAK. האבחון יסייע לך לזהות את סגנון הלמידה הדומיננטי שלך: חזותי (Visual), שמיעתי (Auditory) או תנועתי (Kinesthetic).</p>
+            <p>האבחון כולל 9 שאלות, כל שאלה מכילה 3 היגדים. דרג כל היגד בסולם של 1-5 (כאשר 1 = לא מתאים בכלל, 5 = מתאים מאוד).</p>
             <button id="start-btn" class="btn">התחל את האבחון</button>
         </div>
 
-        <!-- מסכי שאלות - דוגמא לשאלה ראשונה -->
+        <!-- שאלה 1 -->
         <div id="question-1-screen" class="screen">
             <h2>שאלה 1 מתוך 9</h2>
             
@@ -57,7 +58,349 @@
             </div>
         </div>
 
-        <!-- יש להוסיף את שאר מסכי השאלות בצורה דומה -->
+        <!-- שאלה 2 -->
+        <div id="question-2-screen" class="screen">
+            <h2>שאלה 2 מתוך 9</h2>
+            
+            <div class="rating" data-question="2" data-statement="0">
+                <p>אני מעדיף להשתמש בתרשימים ובמפות כדי להבין מידע מורכב</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="2" data-statement="1">
+                <p>אני מעדיף לשמוע הסברים בעל פה על מידע מורכב</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="2" data-statement="2">
+                <p>אני מעדיף לעבוד עם הידיים ולנסות דברים בעצמי כדי להבין</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-1-screen">קודם</button>
+                <button class="next-btn" data-next="question-3-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 3 -->
+        <div id="question-3-screen" class="screen">
+            <h2>שאלה 3 מתוך 9</h2>
+            
+            <div class="rating" data-question="3" data-statement="0">
+                <p>אני אוהב לעשות רשימות ולכתוב הערות צבעוניות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="3" data-statement="1">
+                <p>אני אוהב לדבר על מה שאני לומד עם אחרים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="3" data-statement="2">
+                <p>אני אוהב לבנות דברים ולהתנסות בפעילויות מעשיות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-2-screen">קודם</button>
+                <button class="next-btn" data-next="question-4-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 4 -->
+        <div id="question-4-screen" class="screen">
+            <h2>שאלה 4 מתוך 9</h2>
+            
+            <div class="rating" data-question="4" data-statement="0">
+                <p>אני מזהה פרטים חזותיים קטנים שאחרים מפספסים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="4" data-statement="1">
+                <p>אני רגיש לצלילים ולשינויים בטון הקול</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="4" data-statement="2">
+                <p>אני רגיש למגע ולמרקם של חפצים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-3-screen">קודם</button>
+                <button class="next-btn" data-next="question-5-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 5 -->
+        <div id="question-5-screen" class="screen">
+            <h2>שאלה 5 מתוך 9</h2>
+            
+            <div class="rating" data-question="5" data-statement="0">
+                <p>אני מעדיף לראות סרטונים או מצגות במקום לקרוא טקסט</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="5" data-statement="1">
+                <p>אני מעדיף לשמוע הרצאות או פודקאסטים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="5" data-statement="2">
+                <p>אני מעדיף ללמוד באמצעות התנסויות וסימולציות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-4-screen">קודם</button>
+                <button class="next-btn" data-next="question-6-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 6 -->
+        <div id="question-6-screen" class="screen">
+            <h2>שאלה 6 מתוך 9</h2>
+            
+            <div class="rating" data-question="6" data-statement="0">
+                <p>כשאני חושב, אני רואה תמונות בראש שלי</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="6" data-statement="1">
+                <p>כשאני חושב, אני שומע דיאלוג פנימי או צלילים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="6" data-statement="2">
+                <p>כשאני חושב, אני מרגיש תחושות גופניות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-5-screen">קודם</button>
+                <button class="next-btn" data-next="question-7-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 7 -->
+        <div id="question-7-screen" class="screen">
+            <h2>שאלה 7 מתוך 9</h2>
+            
+            <div class="rating" data-question="7" data-statement="0">
+                <p>קל לי להתרכז כשהסביבה מסודרת ויפה</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="7" data-statement="1">
+                <p>קל לי להתרכז כשהסביבה שקטה או עם מוזיקה רגועה</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="7" data-statement="2">
+                <p>קל לי להתרכז כשאני יכול לזוז ולשנות עמדות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-6-screen">קודם</button>
+                <button class="next-btn" data-next="question-8-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 8 -->
+        <div id="question-8-screen" class="screen">
+            <h2>שאלה 8 מתוך 9</h2>
+            
+            <div class="rating" data-question="8" data-statement="0">
+                <p>אני זוכר טוב יותר פרצופים של אנשים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="8" data-statement="1">
+                <p>אני זוכר טוב יותר שמות או קולות של אנשים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="8" data-statement="2">
+                <p>אני זוכר טוב יותר דברים שעשיתי עם אנשים אחרים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-7-screen">קודם</button>
+                <button class="next-btn" data-next="question-9-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- שאלה 9 -->
+        <div id="question-9-screen" class="screen">
+            <h2>שאלה 9 מתוך 9</h2>
+            
+            <div class="rating" data-question="9" data-statement="0">
+                <p>בזמן פנוי אני אוהב לצפות בסרטים או לעיין בתמונות</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="9" data-statement="1">
+                <p>בזמן פנוי אני אוהב לשמוע מוזיקה או להקשיב לפודקאסטים</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="9" data-statement="2">
+                <p>בזמן פנוי אני אוהב לעסוק בפעילויות גופניות או יצירה</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="back-btn" data-prev="question-8-screen">קודם</button>
+                <button id="finish-btn" class="btn">סיים ובדוק תוצאות</button>
+            </div>
+        </div>
         
         <!-- מסך תוצאות -->
         <div id="results-screen" class="screen">
@@ -111,6 +454,8 @@
                     <li>הוסף צבעים, הדגשות וסימנים חזותיים</li>
                     <li>השתמש בסרטונים ותמונות כחלק מהלמידה</li>
                     <li>צור דיאגרמות וטבלאות לארגון מידע</li>
+                    <li>השתמש בכרטיסי למידה עם איורים</li>
+                    <li>בחר בספרים עם איורים ותרשימים</li>
                 </ul>
                 <button id="visual-video-btn" class="btn video-btn">צפה בסרטון על למידה חזותית</button>
             </div>
@@ -123,6 +468,8 @@
                     <li>הקלט את עצמך מסביר את החומר והקשב להקלטה</li>
                     <li>השתמש בהקראה של טקסטים</li>
                     <li>למד עם מוזיקה רגועה ברקע</li>
+                    <li>הסבר את החומר לאחרים</li>
+                    <li>השתמש בחרוזים ושירים כדי לזכור מידע</li>
                 </ul>
                 <button id="auditory-video-btn" class="btn video-btn">צפה בסרטון על למידה שמיעתית</button>
             </div>
@@ -135,6 +482,8 @@
                     <li>השתמש בלמידה מבוססת פרויקטים ומעשית</li>
                     <li>קח הפסקות קצרות ועשה פעילות גופנית</li>
                     <li>השתמש בחפצים מוחשיים שאפשר לאחוז בהם</li>
+                    <li>בנה מודלים תלת-מימדיים של מושגים</li>
+                    <li>למד באמצעות ניסויים ופעילויות מעבדה</li>
                 </ul>
                 <button id="kinesthetic-video-btn" class="btn video-btn">צפה בסרטון על למידה תנועתית</button>
             </div>
