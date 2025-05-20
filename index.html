@@ -10,6 +10,14 @@
     <div class="container">
         <!-- מסך פתיחה -->
         <div id="intro-screen" class="screen active">
+            <div class="intro-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    <circle cx="12" cy="8" r="2"/>
+                    <circle cx="12" cy="14" r="1"/>
+                </svg>
+            </div>
             <h1>אבחון סגנונות למידה VAK</h1>
             <p>ברוכים הבאים לאבחון סגנונות למידה VAK. האבחון יסייע לך לזהות את סגנון הלמידה הדומיננטי שלך: חזותי (Visual), שמיעתי (Auditory) או תנועתי (Kinesthetic).</p>
             <p>האבחון כולל 9 שאלות, כל שאלה מכילה 3 היגדים. דרג כל היגד בסולם של 1-5 (כאשר 1 = לא מתאים בכלל, 5 = מתאים מאוד).</p>
@@ -18,9 +26,22 @@
 
         <!-- שאלה 1 -->
         <div id="question-1-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                    <circle cx="11" cy="11" r="3"/>
+                </svg>
+            </div>
             <h2>שאלה 1 מתוך 9</h2>
             
             <div class="rating" data-question="1" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר כשאני רואה את החומר הנלמד</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -32,6 +53,13 @@
             </div>
             
             <div class="rating" data-question="1" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר כשאני שומע את החומר הנלמד</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -43,6 +71,11 @@
             </div>
             
             <div class="rating" data-question="1" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר כשאני עושה פעילות הקשורה לחומר הנלמד</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -60,9 +93,25 @@
 
         <!-- שאלה 2 -->
         <div id="question-2-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="9" cy="9" r="2"/>
+                    <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                </svg>
+            </div>
             <h2>שאלה 2 מתוך 9</h2>
             
             <div class="rating" data-question="2" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף להשתמש בתרשימים ובמפות כדי להבין מידע מורכב</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -74,6 +123,14 @@
             </div>
             
             <div class="rating" data-question="2" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8" y1="23" x2="16" y2="23"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף לשמוע הסברים בעל פה על מידע מורכב</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -85,6 +142,11 @@
             </div>
             
             <div class="rating" data-question="2" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף לעבוד עם הידיים ולנסות דברים בעצמי כדי להבין</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -103,9 +165,24 @@
 
         <!-- שאלה 3 -->
         <div id="question-3-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+                    <line x1="16" y1="8" x2="2" y2="22"/>
+                    <line x1="17.5" y1="15" x2="9" y2="15"/>
+                </svg>
+            </div>
             <h2>שאלה 3 מתוך 9</h2>
             
             <div class="rating" data-question="3" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M3 3v5h5"/>
+                        <path d="M3 8a9 9 0 0 1 9-9"/>
+                        <path d="M21 21v-5h-5"/>
+                        <path d="M21 16a9 9 0 0 1-9 9"/>
+                    </svg>
+                </div>
                 <p>אני אוהב לעשות רשימות ולכתוב הערות צבעוניות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -117,6 +194,12 @@
             </div>
             
             <div class="rating" data-question="3" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+                    </svg>
+                </div>
                 <p>אני אוהב לדבר על מה שאני לומד עם אחרים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -128,6 +211,13 @@
             </div>
             
             <div class="rating" data-question="3" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
                 <p>אני אוהב לבנות דברים ולהתנסות בפעילויות מעשיות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -146,9 +236,22 @@
 
         <!-- שאלה 4 -->
         <div id="question-4-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
             <h2>שאלה 4 מתוך 9</h2>
             
             <div class="rating" data-question="4" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M9 9h6v6h-6z"/>
+                        <path d="M21 15V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
+                    </svg>
+                </div>
                 <p>אני מזהה פרטים חזותיים קטנים שאחרים מפספסים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -160,6 +263,12 @@
             </div>
             
             <div class="rating" data-question="4" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
                 <p>אני רגיש לצלילים ולשינויים בטון הקול</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -171,6 +280,12 @@
             </div>
             
             <div class="rating" data-question="4" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"/>
+                        <line x1="12" y1="2" x2="12" y2="12"/>
+                    </svg>
+                </div>
                 <p>אני רגיש למגע ולמרקם של חפצים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -189,9 +304,20 @@
 
         <!-- שאלה 5 -->
         <div id="question-5-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <polygon points="23 7 16 12 23 17 23 7"/>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                </svg>
+            </div>
             <h2>שאלה 5 מתוך 9</h2>
             
             <div class="rating" data-question="5" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497-3.753C20.18 7.773 21.692 5.25 22 4.01z"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף לראות סרטונים או מצגות במקום לקרוא טקסט</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -203,6 +329,12 @@
             </div>
             
             <div class="rating" data-question="5" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <circle cx="12" cy="12" r="2"/>
+                        <path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף לשמוע הרצאות או פודקאסטים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -214,6 +346,12 @@
             </div>
             
             <div class="rating" data-question="5" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </div>
                 <p>אני מעדיף ללמוד באמצעות התנסויות וסימולציות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -232,9 +370,22 @@
 
         <!-- שאלה 6 -->
         <div id="question-6-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"/>
+                    <circle cx="21" cy="12" r="9"/>
+                    <path d="M8 21l-7-7 7-7"/>
+                </svg>
+            </div>
             <h2>שאלה 6 מתוך 9</h2>
             
             <div class="rating" data-question="6" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
+                        <circle cx="12" cy="12" r="6"/>
+                    </svg>
+                </div>
                 <p>כשאני חושב, אני רואה תמונות בראש שלי</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -246,6 +397,12 @@
             </div>
             
             <div class="rating" data-question="6" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                    </svg>
+                </div>
                 <p>כשאני חושב, אני שומע דיאלוג פנימי או צלילים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -257,6 +414,11 @@
             </div>
             
             <div class="rating" data-question="6" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                </div>
                 <p>כשאני חושב, אני מרגיש תחושות גופניות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -275,9 +437,21 @@
 
         <!-- שאלה 7 -->
         <div id="question-7-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <circle cx="12" cy="12" r="6"/>
+                    <polyline points="9,12 12,15 15,9"/>
+                </svg>
+            </div>
             <h2>שאלה 7 מתוך 9</h2>
             
             <div class="rating" data-question="7" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
                 <p>קל לי להתרכז כשהסביבה מסודרת ויפה</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -289,6 +463,13 @@
             </div>
             
             <div class="rating" data-question="7" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+                    </svg>
+                </div>
                 <p>קל לי להתרכז כשהסביבה שקטה או עם מוזיקה רגועה</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -300,6 +481,11 @@
             </div>
             
             <div class="rating" data-question="7" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18-5v5h-3m-3 13h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                    </svg>
+                </div>
                 <p>קל לי להתרכז כשאני יכול לזוז ולשנות עמדות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -318,9 +504,21 @@
 
         <!-- שאלה 8 -->
         <div id="question-8-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
             <h2>שאלה 8 מתוך 9</h2>
             
             <div class="rating" data-question="8" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <circle cx="12" cy="10" r="3"/>
+                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר פרצופים של אנשים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -332,6 +530,11 @@
             </div>
             
             <div class="rating" data-question="8" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר שמות או קולות של אנשים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -343,6 +546,14 @@
             </div>
             
             <div class="rating" data-question="8" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
                 <p>אני זוכר טוב יותר דברים שעשיתי עם אנשים אחרים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -361,9 +572,22 @@
 
         <!-- שאלה 9 -->
         <div id="question-9-screen" class="screen">
+            <div class="question-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10,8 16,12 10,16 10,8"/>
+                </svg>
+            </div>
             <h2>שאלה 9 מתוך 9</h2>
             
             <div class="rating" data-question="9" data-statement="0">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
                 <p>בזמן פנוי אני אוהב לצפות בסרטים או לעיין בתמונות</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -375,6 +599,13 @@
             </div>
             
             <div class="rating" data-question="9" data-statement="1">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                </div>
                 <p>בזמן פנוי אני אוהב לשמוע מוזיקה או להקשיב לפודקאסטים</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -386,6 +617,11 @@
             </div>
             
             <div class="rating" data-question="9" data-statement="2">
+                <div class="statement-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </div>
                 <p>בזמן פנוי אני אוהב לעסוק בפעילויות גופניות או יצירה</p>
                 <div class="rating-buttons">
                     <button class="rating-btn" data-value="1">1</button>
@@ -397,18 +633,29 @@
             </div>
             
             <div class="navigation">
-                <button class="back-btn" data-prev="question-8-screen">קודם</button>
-                <button id="finish-btn" class="btn">סיים ובדוק תוצאות</button>
+                <button class="back-btn" data-prev="question-8-screen">קודم</button>
+                <button id="finish-btn" class="btn finish-btn">סיים ובדוק תוצאות</button>
             </div>
         </div>
         
         <!-- מסך תוצאות -->
         <div id="results-screen" class="screen">
+            <div class="results-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+            </div>
             <h2>התוצאות שלך</h2>
             
             <div class="results-container">
                 <div class="result-item">
-                    <div class="result-label">חזותי (Visual)</div>
+                    <div class="result-label">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        חזותי (Visual)
+                    </div>
                     <div class="result-bar-container">
                         <div id="visual-bar" class="result-bar visual-color"></div>
                     </div>
@@ -416,7 +663,13 @@
                 </div>
                 
                 <div class="result-item">
-                    <div class="result-label">שמיעתי (Auditory)</div>
+                    <div class="result-label">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                            <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5"/>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        </svg>
+                        שמיעתי (Auditory)
+                    </div>
                     <div class="result-bar-container">
                         <div id="auditory-bar" class="result-bar auditory-color"></div>
                     </div>
@@ -424,7 +677,12 @@
                 </div>
                 
                 <div class="result-item">
-                    <div class="result-label">תנועתי (Kinesthetic)</div>
+                    <div class="result-label">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                        </svg>
+                        תנועתי (Kinesthetic)
+                    </div>
                     <div class="result-bar-container">
                         <div id="kinesthetic-bar" class="result-bar kinesthetic-color"></div>
                     </div>
@@ -444,11 +702,24 @@
         
         <!-- מסך המלצות -->
         <div id="recommendations-screen" class="screen">
+            <div class="recommendations-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
             <h2>המלצות ללמידה</h2>
             
             <!-- המלצות לסגנון חזותי -->
             <div id="visual-recommendations" class="recommendation-section">
-                <h3>המלצות ללומד החזותי</h3>
+                <div class="recommendation-header">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <h3>המלצות ללומד החזותי</h3>
+                </div>
                 <ul>
                     <li>השתמש במפות חשיבה וארגון גרפי של החומר</li>
                     <li>הוסף צבעים, הדגשות וסימנים חזותיים</li>
@@ -457,12 +728,17 @@
                     <li>השתמש בכרטיסי למידה עם איורים</li>
                     <li>בחר בספרים עם איורים ותרשימים</li>
                 </ul>
-                <button id="visual-video-btn" class="btn video-btn">צפה בסרטון על למידה חזותית</button>
             </div>
             
             <!-- המלצות לסגנון שמיעתי -->
             <div id="auditory-recommendations" class="recommendation-section">
-                <h3>המלצות ללומד השמיעתי</h3>
+                <div class="recommendation-header">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2">
+                        <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                    <h3>המלצות ללומד השמיעתי</h3>
+                </div>
                 <ul>
                     <li>השתתף בדיונים ושיחות על החומר הנלמד</li>
                     <li>הקלט את עצמך מסביר את החומר והקשב להקלטה</li>
@@ -471,12 +747,16 @@
                     <li>הסבר את החומר לאחרים</li>
                     <li>השתמש בחרוזים ושירים כדי לזכור מידע</li>
                 </ul>
-                <button id="auditory-video-btn" class="btn video-btn">צפה בסרטון על למידה שמיעתית</button>
             </div>
             
             <!-- המלצות לסגנון תנועתי -->
             <div id="kinesthetic-recommendations" class="recommendation-section">
-                <h3>המלצות ללומד התנועתי</h3>
+                <div class="recommendation-header">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
+                        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                    <h3>המלצות ללומד התנועתי</h3>
+                </div>
                 <ul>
                     <li>שלב תנועה בזמן הלמידה - טייל בחדר בזמן שאתה קורא</li>
                     <li>השתמש בלמידה מבוססת פרויקטים ומעשית</li>
@@ -485,7 +765,6 @@
                     <li>בנה מודלים תלת-מימדיים של מושגים</li>
                     <li>למד באמצעות ניסויים ופעילויות מעבדה</li>
                 </ul>
-                <button id="kinesthetic-video-btn" class="btn video-btn">צפה בסרטון על למידה תנועתית</button>
             </div>
             
             <button id="back-to-results-btn" class="btn">חזור לתוצאות</button>
