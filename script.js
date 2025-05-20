@@ -2,11 +2,10 @@
 let answers = {};
 let results = {};
 
-// קישורים לסרטונים - יש להחליף בקישורים אמיתיים
 const videoLinks = {
-    visual: "https://www.youtube.com/watch?v=example-visual",
-    auditory: "https://www.youtube.com/watch?v=example-auditory",
-    kinesthetic: "https://www.youtube.com/watch?v=example-kinesthetic"
+    visual: "https://www.youtube.com/watch?v=הקישור_לסרטון_חזותי",
+    auditory: "https://www.youtube.com/watch?v=הקישור_לסרטון_שמיעתי", 
+    kinesthetic: "https://www.youtube.com/watch?v=הקישור_לסרטון_תנועתי"
 };
 
 // פונקציה להצגת מסך
