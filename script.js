@@ -4,6 +4,8 @@ let results = {};
 
 // פונקציה להצגת מסך
 function showScreen(screenId) {
+    console.log('Showing screen:', screenId);
+    
     // הסתרת כל המסכים
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
@@ -15,6 +17,8 @@ function showScreen(screenId) {
         targetScreen.classList.add('active');
         // גלילה לתחילת המסך
         targetScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        console.error('Screen not found:', screenId);
     }
 }
 
@@ -24,17 +28,21 @@ function registerAnswer(question, statement, value) {
     const key = `q${question}_${statement}`;
     answers[key] = parseInt(value);
     
+    console.log('Registered answer:', key, '=', value);
+    
     // סימון הכפתור שנבחר
     const rating = document.querySelector(`.rating[data-question="${question}"][data-statement="${statement}"]`);
-    const buttons = rating.querySelectorAll('.rating-btn');
-    
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    const selectedButton = rating.querySelector(`.rating-btn[data-value="${value}"]`);
-    if (selectedButton) {
-        selectedButton.classList.add('active');
+    if (rating) {
+        const buttons = rating.querySelectorAll('.rating-btn');
+        
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const selectedButton = rating.querySelector(`.rating-btn[data-value="${value}"]`);
+        if (selectedButton) {
+            selectedButton.classList.add('active');
+        }
     }
 }
 
@@ -96,18 +104,25 @@ function calculateResults() {
 // פונקציה להצגת התוצאות
 function displayResults(results) {
     // הצגת אחוזים
-    document.getElementById('visual-percent').textContent = `${Math.round(results.visualPercent)}%`;
-    document.getElementById('auditory-percent').textContent = `${Math.round(results.auditoryPercent)}%`;
-    document.getElementById('kinesthetic-percent').textContent = `${Math.round(results.kinestheticPercent)}%`;
+    const visualPercentEl = document.getElementById('visual-percent');
+    const auditoryPercentEl = document.getElementById('auditory-percent');
+    const kinestheticPercentEl = document.getElementById('kinesthetic-percent');
+    const dominantStyleEl = document.getElementById('dominant-style');
     
-    // הצגת הסגנון הדומיננטי
-    document.getElementById('dominant-style').textContent = results.dominantStyleName;
+    if (visualPercentEl) visualPercentEl.textContent = `${Math.round(results.visualPercent)}%`;
+    if (auditoryPercentEl) auditoryPercentEl.textContent = `${Math.round(results.auditoryPercent)}%`;
+    if (kinestheticPercentEl) kinestheticPercentEl.textContent = `${Math.round(results.kinestheticPercent)}%`;
+    if (dominantStyleEl) dominantStyleEl.textContent = results.dominantStyleName;
     
     // הצגת גרפים באנימציה
     setTimeout(() => {
-        document.getElementById('visual-bar').style.width = `${results.visualPercent}%`;
-        document.getElementById('auditory-bar').style.width = `${results.auditoryPercent}%`;
-        document.getElementById('kinesthetic-bar').style.width = `${results.kinestheticPercent}%`;
+        const visualBar = document.getElementById('visual-bar');
+        const auditoryBar = document.getElementById('auditory-bar');
+        const kinestheticBar = document.getElementById('kinesthetic-bar');
+        
+        if (visualBar) visualBar.style.width = `${results.visualPercent}%`;
+        if (auditoryBar) auditoryBar.style.width = `${results.auditoryPercent}%`;
+        if (kinestheticBar) kinestheticBar.style.width = `${results.kinestheticPercent}%`;
     }, 500);
     
     // הסתרת כל חלקי ההמלצות
@@ -132,13 +147,7 @@ function checkAllAnswered(questionNumber) {
 
 // אתחול האירועים
 function initializeEvents() {
-    // כפתור התחלה
-    const startBtn = document.getElementById('start-btn');
-    if (startBtn) {
-        startBtn.addEventListener('click', function() {
-            showScreen('question-1-screen');
-        });
-    }
+    console.log('Initializing all events...');
     
     // כפתורי הדירוג
     document.querySelectorAll('.rating-btn').forEach(button => {
@@ -248,6 +257,21 @@ function resetAssessment() {
 // הפעלת האירועים בטעינת הדף
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing events...');
+    
+    // כפתור התחלה - טיפול מיוחד
+    const startBtn = document.getElementById('start-btn');
+    console.log('Start button found:', startBtn);
+    
+    if (startBtn) {
+        startBtn.addEventListener('click', function() {
+            console.log('Start button clicked!');
+            showScreen('question-1-screen');
+        });
+    } else {
+        console.error('Start button not found!');
+    }
+    
+    // אתחול יתר האירועים
     initializeEvents();
     
     // הצגת המסך הראשון
