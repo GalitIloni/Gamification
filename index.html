@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אבחון סגנונות למידה VAK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- מסך פתיחה -->
+        <div id="intro-screen" class="screen active">
+            <h1>אבחון סגנונות למידה VAK</h1>
+            <p>ברוכים הבאים לאבחון סגנונות למידה VAK. האבחון יסייע לך לזהות את סגנון הלמידה הדומיננטי שלך: חזותי (Visual), שמיעתי (Auditory) או תנועתי (Kinesthetic).</p>
+            <button id="start-btn" class="btn">התחל את האבחון</button>
+        </div>
+
+        <!-- מסכי שאלות - דוגמא לשאלה ראשונה -->
+        <div id="question-1-screen" class="screen">
+            <h2>שאלה 1 מתוך 9</h2>
+            
+            <div class="rating" data-question="1" data-statement="0">
+                <p>אני זוכר טוב יותר כשאני רואה את החומר הנלמד</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="1" data-statement="1">
+                <p>אני זוכר טוב יותר כשאני שומע את החומר הנלמד</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="rating" data-question="1" data-statement="2">
+                <p>אני זוכר טוב יותר כשאני עושה פעילות הקשורה לחומר הנלמד</p>
+                <div class="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button class="next-btn" data-next="question-2-screen">הבא</button>
+            </div>
+        </div>
+
+        <!-- יש להוסיף את שאר מסכי השאלות בצורה דומה -->
+        
+        <!-- מסך תוצאות -->
+        <div id="results-screen" class="screen">
+            <h2>התוצאות שלך</h2>
+            
+            <div class="results-container">
+                <div class="result-item">
+                    <div class="result-label">חזותי (Visual)</div>
+                    <div class="result-bar-container">
+                        <div id="visual-bar" class="result-bar visual-color"></div>
+                    </div>
+                    <div id="visual-percent" class="result-percent">0%</div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">שמיעתי (Auditory)</div>
+                    <div class="result-bar-container">
+                        <div id="auditory-bar" class="result-bar auditory-color"></div>
+                    </div>
+                    <div id="auditory-percent" class="result-percent">0%</div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">תנועתי (Kinesthetic)</div>
+                    <div class="result-bar-container">
+                        <div id="kinesthetic-bar" class="result-bar kinesthetic-color"></div>
+                    </div>
+                    <div id="kinesthetic-percent" class="result-percent">0%</div>
+                </div>
+            </div>
+            
+            <div class="dominant-style">
+                <p>סגנון הלמידה הדומיננטי שלך הוא: <span id="dominant-style">-</span></p>
+            </div>
+            
+            <div class="buttons-container">
+                <button id="recommendations-btn" class="btn">המלצות ללמידה</button>
+                <button id="reset-btn" class="btn">התחל מחדש</button>
+            </div>
+        </div>
+        
+        <!-- מסך המלצות -->
+        <div id="recommendations-screen" class="screen">
+            <h2>המלצות ללמידה</h2>
+            
+            <!-- המלצות לסגנון חזותי -->
+            <div id="visual-recommendations" class="recommendation-section">
+                <h3>המלצות ללומד החזותי</h3>
+                <ul>
+                    <li>השתמש במפות חשיבה וארגון גרפי של החומר</li>
+                    <li>הוסף צבעים, הדגשות וסימנים חזותיים</li>
+                    <li>השתמש בסרטונים ותמונות כחלק מהלמידה</li>
+                    <li>צור דיאגרמות וטבלאות לארגון מידע</li>
+                </ul>
+                <button id="visual-video-btn" class="btn video-btn">צפה בסרטון על למידה חזותית</button>
+            </div>
+            
+            <!-- המלצות לסגנון שמיעתי -->
+            <div id="auditory-recommendations" class="recommendation-section">
+                <h3>המלצות ללומד השמיעתי</h3>
+                <ul>
+                    <li>השתתף בדיונים ושיחות על החומר הנלמד</li>
+                    <li>הקלט את עצמך מסביר את החומר והקשב להקלטה</li>
+                    <li>השתמש בהקראה של טקסטים</li>
+                    <li>למד עם מוזיקה רגועה ברקע</li>
+                </ul>
+                <button id="auditory-video-btn" class="btn video-btn">צפה בסרטון על למידה שמיעתית</button>
+            </div>
+            
+            <!-- המלצות לסגנון תנועתי -->
+            <div id="kinesthetic-recommendations" class="recommendation-section">
+                <h3>המלצות ללומד התנועתי</h3>
+                <ul>
+                    <li>שלב תנועה בזמן הלמידה - טייל בחדר בזמן שאתה קורא</li>
+                    <li>השתמש בלמידה מבוססת פרויקטים ומעשית</li>
+                    <li>קח הפסקות קצרות ועשה פעילות גופנית</li>
+                    <li>השתמש בחפצים מוחשיים שאפשר לאחוז בהם</li>
+                </ul>
+                <button id="kinesthetic-video-btn" class="btn video-btn">צפה בסרטון על למידה תנועתית</button>
+            </div>
+            
+            <button id="back-to-results-btn" class="btn">חזור לתוצאות</button>
+            <button id="reset-from-recommendations-btn" class="btn">התחל מחדש</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
