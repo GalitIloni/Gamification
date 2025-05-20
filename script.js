@@ -2,12 +2,6 @@
 let answers = {};
 let results = {};
 
-const videoLinks = {
-    visual: "https://www.youtube.com/watch?v=הקישור_לסרטון_חזותי",
-    auditory: "https://www.youtube.com/watch?v=הקישור_לסרטון_שמיעתי", 
-    kinesthetic: "https://www.youtube.com/watch?v=הקישור_לסרטון_תנועתי"
-};
-
 // פונקציה להצגת מסך
 function showScreen(screenId) {
     // הסתרת כל המסכים
@@ -16,7 +10,12 @@ function showScreen(screenId) {
     });
     
     // הצגת המסך הנבחר
-    document.getElementById(screenId).classList.add('active');
+    const targetScreen = document.getElementById(screenId);
+    if (targetScreen) {
+        targetScreen.classList.add('active');
+        // גלילה לתחילת המסך
+        targetScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // פונקציה לרישום תשובה
@@ -34,7 +33,9 @@ function registerAnswer(question, statement, value) {
     });
     
     const selectedButton = rating.querySelector(`.rating-btn[data-value="${value}"]`);
-    selectedButton.classList.add('active');
+    if (selectedButton) {
+        selectedButton.classList.add('active');
+    }
 }
 
 // פונקציה לחישוב התוצאות
@@ -42,28 +43,22 @@ function calculateResults() {
     let visualScore = 0;
     let auditoryScore = 0;
     let kinestheticScore = 0;
-    let totalScore = 0;
+    let totalQuestions = 9;
     
     // סכימת הנקודות לכל סגנון
-    for (const key in answers) {
-        const value = answers[key];
-        const statement = parseInt(key.split('_')[1]);
-        
-        if (statement === 0) {
-            visualScore += value;
-        } else if (statement === 1) {
-            auditoryScore += value;
-        } else if (statement === 2) {
-            kinestheticScore += value;
-        }
-        
-        totalScore += value;
+    for (let q = 1; q <= totalQuestions; q++) {
+        // היגד 0 = חזותי, היגד 1 = שמיעתי, היגד 2 = תנועתי
+        if (answers[`q${q}_0`]) visualScore += answers[`q${q}_0`];
+        if (answers[`q${q}_1`]) auditoryScore += answers[`q${q}_1`];
+        if (answers[`q${q}_2`]) kinestheticScore += answers[`q${q}_2`];
     }
     
+    const totalScore = visualScore + auditoryScore + kinestheticScore;
+    
     // חישוב אחוזים
-    const visualPercent = (visualScore / totalScore) * 100;
-    const auditoryPercent = (auditoryScore / totalScore) * 100;
-    const kinestheticPercent = (kinestheticScore / totalScore) * 100;
+    const visualPercent = totalScore > 0 ? (visualScore / totalScore) * 100 : 0;
+    const auditoryPercent = totalScore > 0 ? (auditoryScore / totalScore) * 100 : 0;
+    const kinestheticPercent = totalScore > 0 ? (kinestheticScore / totalScore) * 100 : 0;
     
     // קביעת הסגנון הדומיננטי
     let dominantStyle = 'visual';
@@ -93,7 +88,8 @@ function calculateResults() {
         auditoryPercent,
         kinestheticPercent,
         dominantStyle,
-        dominantStyleName: styleNames[dominantStyle]
+        dominantStyleName: styleNames[dominantStyle],
+        totalScore
     };
 }
 
@@ -107,10 +103,12 @@ function displayResults(results) {
     // הצגת הסגנון הדומיננטי
     document.getElementById('dominant-style').textContent = results.dominantStyleName;
     
-    // הצגת גרפים
-    document.getElementById('visual-bar').style.width = `${results.visualPercent}%`;
-    document.getElementById('auditory-bar').style.width = `${results.auditoryPercent}%`;
-    document.getElementById('kinesthetic-bar').style.width = `${results.kinestheticPercent}%`;
+    // הצגת גרפים באנימציה
+    setTimeout(() => {
+        document.getElementById('visual-bar').style.width = `${results.visualPercent}%`;
+        document.getElementById('auditory-bar').style.width = `${results.auditoryPercent}%`;
+        document.getElementById('kinesthetic-bar').style.width = `${results.kinestheticPercent}%`;
+    }, 500);
     
     // הסתרת כל חלקי ההמלצות
     document.querySelectorAll('.recommendation-section').forEach(section => {
@@ -118,20 +116,29 @@ function displayResults(results) {
     });
     
     // הצגת ההמלצות הרלוונטיות
-    document.getElementById(`${results.dominantStyle}-recommendations`).style.display = 'block';
+    const recommendationSection = document.getElementById(`${results.dominantStyle}-recommendations`);
+    if (recommendationSection) {
+        recommendationSection.style.display = 'block';
+    }
 }
 
-// פונקציה לפתיחת הסרטון
-function openVideo(style) {
-    window.open(videoLinks[style], '_blank');
+// פונקציה לבדיקה אם כל ההיגדים נענו בשאלה
+function checkAllAnswered(questionNumber) {
+    const statements = [0, 1, 2];
+    return statements.every(statement => 
+        answers[`q${questionNumber}_${statement}`] !== undefined
+    );
 }
 
 // אתחול האירועים
 function initializeEvents() {
     // כפתור התחלה
-    document.getElementById('start-btn').addEventListener('click', function() {
-        showScreen('question-1-screen');
-    });
+    const startBtn = document.getElementById('start-btn');
+    if (startBtn) {
+        startBtn.addEventListener('click', function() {
+            showScreen('question-1-screen');
+        });
+    }
     
     // כפתורי הדירוג
     document.querySelectorAll('.rating-btn').forEach(button => {
@@ -144,15 +151,13 @@ function initializeEvents() {
         });
     });
     
-    // כפתורי ניווט קדימה ואחורה
+    // כפתורי ניווט קדימה
     document.querySelectorAll('.next-btn').forEach(button => {
         button.addEventListener('click', function() {
             const nextScreen = this.getAttribute('data-next');
-            // בדיקה אם כל ההיגדים נענו
             if (nextScreen) {
                 const currentQuestion = parseInt(this.closest('.screen').id.split('-')[1]);
-                const allAnswered = [0, 1, 2].every(idx => answers[`q${currentQuestion}_${idx}`] !== undefined);
-                if (allAnswered) {
+                if (checkAllAnswered(currentQuestion)) {
                     showScreen(nextScreen);
                 } else {
                     alert('נא לענות על כל ההיגדים בשאלה זו לפני שתמשיך');
@@ -161,6 +166,7 @@ function initializeEvents() {
         });
     });
     
+    // כפתורי ניווט אחורה
     document.querySelectorAll('.back-btn').forEach(button => {
         button.addEventListener('click', function() {
             const prevScreen = this.getAttribute('data-prev');
@@ -171,61 +177,68 @@ function initializeEvents() {
     });
     
     // כפתור סיום
-    document.getElementById('finish-btn').addEventListener('click', function() {
-        // בדיקה אם כל ההיגדים נענו בשאלה האחרונה
-        const allAnswered = [0, 1, 2].every(idx => answers[`q9_${idx}`] !== undefined);
-        if (allAnswered) {
-            // חישוב תוצאות
-            results = calculateResults();
-            // הצגת תוצאות
-            displayResults(results);
-            // מעבר למסך תוצאות
-            showScreen('results-screen');
-        } else {
-            alert('נא לענות על כל ההיגדים בשאלה זו לפני שתמשיך');
-        }
-    });
-    
-    // כפתורי הסרטונים
-    document.getElementById('visual-video-btn').addEventListener('click', function() {
-        openVideo('visual');
-    });
-    document.getElementById('auditory-video-btn').addEventListener('click', function() {
-        openVideo('auditory');
-    });
-    document.getElementById('kinesthetic-video-btn').addEventListener('click', function() {
-        openVideo('kinesthetic');
-    });
+    const finishBtn = document.getElementById('finish-btn');
+    if (finishBtn) {
+        finishBtn.addEventListener('click', function() {
+            if (checkAllAnswered(9)) {
+                // חישוב תוצאות
+                results = calculateResults();
+                // הצגת תוצאות
+                displayResults(results);
+                // מעבר למסך תוצאות
+                showScreen('results-screen');
+            } else {
+                alert('נא לענות על כל ההיגדים בשאלה זו לפני שתמשיך');
+            }
+        });
+    }
     
     // כפתור המלצות
-    document.getElementById('recommendations-btn').addEventListener('click', function() {
-        showScreen('recommendations-screen');
-    });
+    const recommendationsBtn = document.getElementById('recommendations-btn');
+    if (recommendationsBtn) {
+        recommendationsBtn.addEventListener('click', function() {
+            showScreen('recommendations-screen');
+        });
+    }
     
     // כפתור חזרה לתוצאות
-    document.getElementById('back-to-results-btn').addEventListener('click', function() {
-        showScreen('results-screen');
-    });
+    const backToResultsBtn = document.getElementById('back-to-results-btn');
+    if (backToResultsBtn) {
+        backToResultsBtn.addEventListener('click', function() {
+            showScreen('results-screen');
+        });
+    }
     
     // כפתורי התחלה מחדש
-    document.getElementById('reset-btn').addEventListener('click', function() {
-        resetAssessment();
-    });
-    document.getElementById('reset-from-recommendations-btn').addEventListener('click', function() {
-        resetAssessment();
-    });
+    const resetBtn = document.getElementById('reset-btn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+            resetAssessment();
+        });
+    }
+    
+    const resetFromRecommendationsBtn = document.getElementById('reset-from-recommendations-btn');
+    if (resetFromRecommendationsBtn) {
+        resetFromRecommendationsBtn.addEventListener('click', function() {
+            resetAssessment();
+        });
+    }
 }
 
 // פונקציה לאיפוס האבחון
 function resetAssessment() {
     // איפוס התשובות
-    for (const key in answers) {
-        delete answers[key];
-    }
+    answers = {};
+    results = {};
     
     // איפוס בחירת הכפתורים
     document.querySelectorAll('.rating-btn').forEach(button => {
         button.classList.remove('active');
+    });
+    
+    // איפוס גרפי התוצאות
+    document.querySelectorAll('.result-bar').forEach(bar => {
+        bar.style.width = '0%';
     });
     
     // חזרה למסך הראשון
@@ -234,5 +247,29 @@ function resetAssessment() {
 
 // הפעלת האירועים בטעינת הדף
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing events...');
     initializeEvents();
+    
+    // הצגת המסך הראשון
+    showScreen('intro-screen');
 });
+
+// פונקציות עזר לבדיקת שלמות האבחון
+function getCompletionStatus() {
+    const totalQuestions = 9;
+    const totalStatements = totalQuestions * 3;
+    const answeredStatements = Object.keys(answers).length;
+    
+    return {
+        totalStatements,
+        answeredStatements,
+        completionPercentage: (answeredStatements / totalStatements) * 100,
+        isComplete: answeredStatements === totalStatements
+    };
+}
+
+// פונקציה להצגת סטטוס השלמה (אופציונלי)
+function showCompletionStatus() {
+    const status = getCompletionStatus();
+    console.log(`אבחון הושלם: ${Math.round(status.completionPercentage)}% (${status.answeredStatements}/${status.totalStatements})`);
+}
